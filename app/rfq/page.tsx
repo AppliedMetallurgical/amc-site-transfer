@@ -1,96 +1,85 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Request a Quote — Send Your Print",
+  description:
+    "Submit STEP, IGES, SolidWorks, or PDF files for review. DFM feedback, casting strategy, and quote returned by the team that will actually build the part.",
+};
+
 export default function RFQPage() {
   return (
-    <main className="bg-foundry pt-32 pb-32">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-        <div className="mb-16 grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-8">
-            <div className="mb-6 font-mono text-[11px] tracking-[0.32em] uppercase text-pour">
-              Request a Quote
+    <main className="bg-paper pt-44 pb-32 px-6 md:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1400px]">
+        {/* Header */}
+        <div className="mb-20 grid grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-9">
+            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+              Request a quote
             </div>
             <h1
-              className="font-sans font-black leading-[0.92] tracking-[-0.04em] text-paper"
-              style={{ fontSize: "clamp(2.5rem, 7vw, 92px)" }}
+              className="mt-6 font-serif font-medium leading-[0.98] tracking-[-0.02em] text-ink"
+              style={{ fontSize: "clamp(2.5rem, 7vw, 108px)" }}
             >
-              Send us your print. We&rsquo;ll send back a plan.
+              Send us your print.
             </h1>
+            <p className="mt-10 max-w-[60ch] text-[20px] leading-relaxed text-ink">
+              STEP, IGES, SolidWorks, or PDF. DFM review and quote come back
+              from the team that will actually build the part — not a sales
+              relay.
+            </p>
           </div>
-          <p className="col-span-12 max-w-[52ch] self-end text-base leading-relaxed text-cast lg:col-span-4">
-            STEP, IGES, SolidWorks, or PDF. We review every RFQ in 48 hours
-            with a manufacturability read and a pricing range — not a black-box
-            quote.
-          </p>
         </div>
 
         <div className="grid grid-cols-12 gap-12">
+          {/* Form */}
           <div className="col-span-12 lg:col-span-7">
-            <form className="space-y-8">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <label className="block">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.24em] uppercase text-pour">
-                    Name
-                  </span>
-                  <input
-                    type="text"
-                    name="name"
-                    className="w-full border-b border-mill/60 bg-transparent py-3 text-base text-paper outline-none transition-colors placeholder:text-steel focus:border-pour"
-                    placeholder="Your name"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.24em] uppercase text-pour">
-                    Company
-                  </span>
-                  <input
-                    type="text"
-                    name="company"
-                    className="w-full border-b border-mill/60 bg-transparent py-3 text-base text-paper outline-none transition-colors placeholder:text-steel focus:border-pour"
-                    placeholder="Company"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.24em] uppercase text-pour">
-                    Email
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    className="w-full border-b border-mill/60 bg-transparent py-3 text-base text-paper outline-none transition-colors placeholder:text-steel focus:border-pour"
-                    placeholder="you@company.com"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.24em] uppercase text-pour">
-                    Phone
-                  </span>
-                  <input
-                    type="tel"
-                    name="phone"
-                    className="w-full border-b border-mill/60 bg-transparent py-3 text-base text-paper outline-none transition-colors placeholder:text-steel focus:border-pour"
-                    placeholder="Optional"
-                  />
-                </label>
+            <form className="space-y-10 border-t border-rule pt-10">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <Field
+                  name="name"
+                  label="Name"
+                  placeholder="Your name"
+                  type="text"
+                />
+                <Field
+                  name="company"
+                  label="Company"
+                  placeholder="Company"
+                  type="text"
+                />
+                <Field
+                  name="email"
+                  label="Email"
+                  placeholder="you@company.com"
+                  type="email"
+                />
+                <Field
+                  name="phone"
+                  label="Phone"
+                  placeholder="Optional"
+                  type="tel"
+                />
               </div>
 
               <label className="block">
-                <span className="mb-2 block font-mono text-[10px] tracking-[0.24em] uppercase text-pour">
+                <span className="mb-3 block font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
                   Part details
                 </span>
                 <textarea
                   name="details"
-                  rows={5}
-                  className="w-full border-b border-mill/60 bg-transparent py-3 text-base text-paper outline-none transition-colors placeholder:text-steel focus:border-pour"
+                  rows={6}
+                  className="w-full border-b border-rule bg-transparent py-3 text-[17px] text-ink outline-none transition-colors placeholder:text-graphite/60 focus:border-ember"
                   placeholder="Material, weight, tolerances, target volume, lead time…"
                 />
               </label>
 
-              <label className="block border border-dashed border-mill/60 p-8 text-center transition-colors hover:border-pour">
-                <span className="mb-2 block font-mono text-[10px] tracking-[0.24em] uppercase text-pour">
+              <label className="block border border-dashed border-rule p-10 text-center transition-colors hover:border-ember">
+                <span className="mb-2 block font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
                   CAD upload
                 </span>
-                <span className="block text-sm text-cast">
-                  STEP · IGES · SolidWorks · PDF — drop a file or click to browse
+                <span className="block text-[15px] text-ink-soft">
+                  STEP · IGES · SolidWorks · PDF — drop a file or click to
+                  browse
                 </span>
                 <input
                   type="file"
@@ -98,14 +87,11 @@ export default function RFQPage() {
                   accept=".step,.stp,.iges,.igs,.sldprt,.pdf"
                   className="sr-only"
                 />
-                <span className="mt-3 block font-mono text-[10px] tracking-[0.24em] uppercase text-steel">
-                  Upload wiring lands at sales@appliedmetallurgical.com (S3 wire-up)
-                </span>
               </label>
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-3 border-2 border-pour bg-pour px-8 py-5 font-mono text-sm tracking-[0.18em] uppercase text-foundry transition-colors hover:bg-pour-bright"
+                className="inline-flex items-center gap-3 bg-ink px-8 py-5 font-sans text-[15px] tracking-[0.06em] text-paper transition-colors hover:bg-iron"
               >
                 Submit RFQ
                 <svg
@@ -113,7 +99,7 @@ export default function RFQPage() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2.5"
+                  strokeWidth="2"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -121,49 +107,88 @@ export default function RFQPage() {
             </form>
           </div>
 
+          {/* Sidebar */}
           <aside className="col-span-12 lg:col-span-5">
-            <div className="border border-mill/60 p-10">
-              <div className="mb-4 font-mono text-[11px] tracking-[0.24em] uppercase text-pour">
-                What happens next
+            <div className="border-t border-rule pt-10 space-y-12">
+              <div>
+                <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-ember mb-4">
+                  What happens next
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex gap-4 text-[16px] leading-relaxed text-ink">
+                    <span className="font-mono text-[12px] tracking-[0.2em] text-graphite pt-[5px] min-w-[18px]">
+                      01
+                    </span>
+                    <span>
+                      Engineering reviews geometry, materials, and target volume
+                      against our process.
+                    </span>
+                  </li>
+                  <li className="flex gap-4 text-[16px] leading-relaxed text-ink">
+                    <span className="font-mono text-[12px] tracking-[0.2em] text-graphite pt-[5px] min-w-[18px]">
+                      02
+                    </span>
+                    <span>
+                      DFM feedback returned — gating, machinability, tolerance
+                      strategy.
+                    </span>
+                  </li>
+                  <li className="flex gap-4 text-[16px] leading-relaxed text-ink">
+                    <span className="font-mono text-[12px] tracking-[0.2em] text-graphite pt-[5px] min-w-[18px]">
+                      03
+                    </span>
+                    <span>
+                      Quote with lead time, tooling approach, and pricing.
+                    </span>
+                  </li>
+                </ul>
               </div>
-              <ol className="space-y-6 text-sm leading-relaxed text-cast">
-                <li className="flex gap-4">
-                  <span className="font-mono text-pour">01</span>
-                  <span>
-                    Engineering reviews the print within 48 hours. No black-box
-                    quotes — we tell you what we see.
-                  </span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="font-mono text-pour">02</span>
-                  <span>
-                    DFM call if there is anything to flag — gating, geometry, or
-                    a tolerance that fights metallurgy.
-                  </span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="font-mono text-pour">03</span>
-                  <span>
-                    Pricing range and lead-time options. Two paths usually, our
-                    preference noted.
-                  </span>
-                </li>
-              </ol>
-              <div className="mt-10 border-t border-mill/60 pt-6">
-                <div className="mb-2 font-mono text-[10px] tracking-[0.24em] uppercase text-steel">
+
+              <div className="border-t border-rule pt-8">
+                <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite mb-3">
                   Or email direct
                 </div>
                 <Link
                   href="mailto:sales@appliedmetallurgical.com"
-                  className="text-base text-paper transition-colors hover:text-pour"
+                  className="text-[17px] text-ink transition-colors hover:text-ember"
                 >
                   sales@appliedmetallurgical.com
                 </Link>
+              </div>
+
+              <div className="border-t border-rule pt-8">
+                <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite mb-3">
+                  Located
+                </div>
+                <div className="text-[17px] text-ink">Gilmer, Texas</div>
               </div>
             </div>
           </aside>
         </div>
       </div>
     </main>
+  );
+}
+
+type FieldProps = {
+  name: string;
+  label: string;
+  placeholder: string;
+  type: "text" | "email" | "tel";
+};
+
+function Field({ name, label, placeholder, type }: FieldProps) {
+  return (
+    <label className="block">
+      <span className="mb-3 block font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+        {label}
+      </span>
+      <input
+        type={type}
+        name={name}
+        className="w-full border-b border-rule bg-transparent py-3 text-[17px] text-ink outline-none transition-colors placeholder:text-graphite/60 focus:border-ember"
+        placeholder={placeholder}
+      />
+    </label>
   );
 }

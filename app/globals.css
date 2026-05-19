@@ -2,57 +2,101 @@
 
 @source "../app/**/*.{ts,tsx,js,jsx,mdx}";
 @source "../components/**/*.{ts,tsx,js,jsx,mdx}";
-@source "../components/hero/**/*.{ts,tsx,js,jsx,mdx}";
 @source "../components/sections/**/*.{ts,tsx,js,jsx,mdx}";
+@source "../components/three/**/*.{ts,tsx,js,jsx,mdx}";
 @source "../lib/**/*.{ts,tsx,js,jsx,mdx}";
 
+@custom-variant dark ([data-theme="dark"] &);
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --c-paper: #F2EEE6;
+  --c-paper-deep: #E8E2D2;
+  --c-ink: #0E0E10;
+  --c-ink-soft: #2B2B2E;
+  --c-graphite: #6B6B6F;
+  --c-rule: #C9C2B0;
+  --c-iron: #1B1B1F;
+  --c-iron-deep: #0F0F12;
+  --c-ember: #B5612C;
+  --c-ember-bright: #E07A33;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-paper: #0F0F12;
+  --c-paper-deep: #16161A;
+  --c-ink: #F2EEE6;
+  --c-ink-soft: #C9C2B0;
+  --c-graphite: #8E8E92;
+  --c-rule: #2B2B2E;
+  --c-iron: #1B1B1F;
+  --c-iron-deep: #0A0A0C;
+  --c-ember: #E07A33;
+  --c-ember-bright: #FF8E47;
+}
+
 @theme inline {
-  --color-foundry: #0A0A0B;
-  --color-iron: #14171A;
-  --color-mill: #1F2326;
-  --color-steel: #71757A;
-  --color-cast: #BABCBF;
-  --color-sand: #E8E2D3;
-  --color-paper: #F5F1E8;
-  --color-pour: #E85D2C;
-  --color-pour-bright: #FF6B33;
-  --color-slag: #F0A33C;
-  --color-slag-deep: #B86F1F;
+  --color-paper: var(--c-paper);
+  --color-paper-deep: var(--c-paper-deep);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-graphite: var(--c-graphite);
+  --color-rule: var(--c-rule);
+  --color-iron: var(--c-iron);
+  --color-iron-deep: var(--c-iron-deep);
+  --color-ember: var(--c-ember);
+  --color-ember-bright: var(--c-ember-bright);
+
+  /* Fixed tokens (never swap) — for always-dark feature surfaces with always-light text */
+  --color-light: #F2EEE6;
+  --color-dark: #0F0F12;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-garamond);
 
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
-
-  --shadow-pour: 0 0 60px rgba(232, 93, 44, 0.35), 0 0 20px rgba(232, 93, 44, 0.5);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
 }
 
-:root {
-  color-scheme: dark;
-  --bg: #0A0A0B;
-  --fg: #F5F1E8;
+html,
+body {
+  background: var(--c-paper);
+  color: var(--c-ink);
+  transition: background-color 280ms ease, color 280ms ease;
 }
-
-html, body { background: var(--bg); color: var(--fg); }
 
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-size: 18px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-::selection { background: var(--color-pour); color: var(--color-paper); }
+.theme-no-transition,
+.theme-no-transition * {
+  transition: none !important;
+}
 
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
+body.intro-lock {
+  overflow: hidden;
+}
 
-@media (pointer: fine) {
-  .cursor-none-app,
-  .cursor-none-app * {
-    cursor: none !important;
-  }
+::selection {
+  background: var(--c-ink);
+  color: var(--c-paper);
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

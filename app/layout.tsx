@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, EB_Garamond } from "next/font/google";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,26 +16,24 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const ebGaramond = EB_Garamond({
+  variable: "--font-garamond",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://appliedmetallurgical.com"),
   title: {
-    default: "Applied Metallurgical Corp. — Engineered Castings + CNC, Gilmer, TX",
+    default: "Applied Metallurgical Corp. — Cast Iron, Steel, CNC. Gilmer, TX.",
     template: "%s | Applied Metallurgical Corp.",
   },
   description:
-    "Cast iron and steel components, 10–1,000 lbs. V-process zero-draft sand casting, 3D-printed sand tooling, in-house CNC machining. Engineering partnership from concept to production.",
+    "Sixteen-person ferrous foundry and CNC machine shop. Cast iron and steel, 10 to 1,000 lbs. V-process zero-draft sand casting, 3D-printed sand tooling, in-house horizontal CNC. Gilmer, Texas.",
   applicationName: "Applied Metallurgical Corp.",
   authors: [{ name: "Applied Metallurgical Corp." }],
-  keywords: [
-    "cast iron foundry",
-    "steel casting",
-    "V-process casting",
-    "3D-printed sand tooling",
-    "CNC machining",
-    "DFM consulting",
-    "Texas foundry",
-    "Gilmer Texas",
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -50,17 +46,21 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const fouc = `(function(){try{var t=localStorage.getItem('amc-theme');if(t!=='dark'&&t!=='light')t='light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
+
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-theme="light"
+      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-foundry text-paper">
-        <CustomCursor />
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: fouc }} />
+      </head>
+      <body className="min-h-full bg-paper text-ink">
         <SmoothScroll>
           <Header />
           {children}
-          <Footer />
         </SmoothScroll>
       </body>
     </html>
