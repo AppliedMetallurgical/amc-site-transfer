@@ -8,10 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
-  { value: "1912", label: "Lineage to Universal Electric Foundry, Chicago" },
-  { value: "16", label: "People on the floor in Gilmer, Texas" },
-  { value: "10–1,000", unit: "lbs", label: "Pour weight range, cast iron and steel" },
-  { value: "±0.001", unit: "in", label: "Machined tolerance, in-house horizontal CNC" },
+  { value: "±0.001\"", label: "Machined tolerance — in-house horizontal CNC" },
+  { value: "1,000 lb", label: "Maximum pour weight — cast iron and steel" },
+  { value: "112", suffix: "years", label: "Continuous foundry lineage to 1912" },
+  { value: "1", suffix: "shop", label: "Design through inspection, no handoffs" },
 ];
 
 export function Stats() {
@@ -21,14 +21,24 @@ export function Stats() {
     () => {
       if (!sectionRef.current) return;
 
-      gsap.set("[data-stat]", { opacity: 0, y: 28 });
-
-      gsap.to("[data-stat]", {
-        opacity: 1,
-        y: 0,
-        duration: 0.9,
+      gsap.from("[data-stat-meta]", {
+        opacity: 0,
+        y: 16,
+        duration: 0.7,
         ease: "power3.out",
-        stagger: 0.12,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      gsap.from("[data-stat-card]", {
+        opacity: 0,
+        y: 32,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.08,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 78%",
@@ -42,35 +52,42 @@ export function Stats() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-paper py-32 px-6 md:px-10 lg:px-16"
+      className="relative bg-iron-deep px-6 py-32 text-light md:px-10 lg:px-16"
     >
       <div className="mx-auto max-w-[1400px]">
-        <div className="mb-12 grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-3">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
-              02 · By the numbers
-            </div>
-            <div className="mt-2 h-px w-16 bg-ink/40" />
+        <div data-stat-meta className="mb-16 max-w-[700px]">
+          <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember-bright">
+            By the numbers
           </div>
+          <h2
+            className="mt-6 font-sans font-black leading-[0.98] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(2rem, 4.5vw, 56px)" }}
+          >
+            Built like the parts we pour.
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
-          {STATS.map((s, i) => (
-            <div key={i} data-stat className="border-t border-rule pt-5">
-              <div
-                className="font-serif font-medium leading-[1.05] tracking-[-0.02em] text-ink"
-                style={{
-                  fontSize: "clamp(2.75rem, 5vw, 72px)",
-                }}
-              >
-                {s.value}
-                {s.unit && (
-                  <span className="ml-1 font-sans text-base font-medium tracking-normal text-graphite">
-                    {s.unit}
-                  </span>
+        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
+          {STATS.map((s) => (
+            <div
+              key={s.label}
+              data-stat-card
+              className="border-t border-light/15 pt-6"
+            >
+              <div className="flex items-baseline gap-3">
+                <div
+                  className="font-sans font-black leading-[1] tracking-[-0.03em]"
+                  style={{ fontSize: "clamp(2.75rem, 5vw, 76px)" }}
+                >
+                  {s.value}
+                </div>
+                {s.suffix && (
+                  <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-light/55">
+                    {s.suffix}
+                  </div>
                 )}
               </div>
-              <div className="mt-3 max-w-[28ch] text-[16px] font-medium leading-relaxed text-ink">
+              <div className="mt-5 max-w-[28ch] text-[15px] leading-relaxed text-light/75">
                 {s.label}
               </div>
             </div>
