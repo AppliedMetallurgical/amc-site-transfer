@@ -3,14 +3,14 @@ import Link from "next/link";
 export const metadata = {
   title: "About — Hartman Family Foundry, Gilmer Texas",
   description:
-    "Applied Metallurgical Corp. is a 16-person cast iron and steel foundry in Gilmer, Texas, owned by the Hartman family. Metalcasting lineage to Universal Electric Foundry, Chicago, 1912.",
+    "Applied Metallurgical Corp. is a cast iron and steel foundry in Gilmer, Texas, owned by the Hartman family. Metalcasting lineage to Universal Electric Foundry, Chicago, 1912.",
 };
 
 const STATS = [
-  { value: "1912", label: "Metalcasting lineage to Universal Electric Foundry, Chicago" },
-  { value: "16", label: "People on the floor in Gilmer, Texas" },
-  { value: "10–1,000", unit: "lbs", label: "Pour weight range, cast iron and steel" },
-  { value: "±0.001", unit: "in", label: "Machined tolerance, in-house horizontal CNC" },
+  { value: "±0.001\"", label: "Machined tolerance — in-house horizontal CNC" },
+  { value: "1,000 lb", label: "Maximum pour weight — cast iron and steel" },
+  { value: "112", suffix: "years", label: "Continuous foundry lineage to 1912" },
+  { value: "1", suffix: "shop", label: "Design through inspection, no handoffs" },
 ];
 
 const STRENGTHS = [
@@ -74,75 +74,75 @@ export default function AboutPage() {
   return (
     <main className="bg-paper pt-44 pb-32 px-6 md:px-10 lg:px-16">
       <div className="mx-auto max-w-[1400px]">
-        {/* Header */}
         <div className="mb-24 grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-9">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+          <div className="col-span-12 lg:col-span-10">
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
               About
             </div>
             <h1
-              className="mt-6 font-serif font-medium leading-[0.98] tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(2.5rem, 6.5vw, 96px)" }}
+              className="mt-6 font-sans font-black leading-[0.95] tracking-[-0.03em] text-ink"
+              style={{ fontSize: "clamp(2.5rem, 7vw, 120px)" }}
             >
-              A 16-person foundry in Gilmer, Texas, owned by the Hartman family.
+              Four generations of cast iron and steel.
             </h1>
-            <p className="mt-10 max-w-[60ch] text-[20px] leading-relaxed text-ink">
+            <p className="mt-10 max-w-[64ch] text-[19px] leading-relaxed text-ink/85">
               Applied Metallurgical Corp. is a cast iron and steel foundry with
-              an in-house CNC machining cell. Metalcasting lineage traces back
+              an in-house CNC machining cell in Gilmer, Texas — owned and
+              operated by the Hartman family. Metalcasting lineage traces back
               to Universal Electric Foundry, founded in Chicago in 1912.
             </p>
           </div>
         </div>
 
-        {/* Stats */}
-        <section className="grid grid-cols-1 gap-x-8 gap-y-12 border-t border-rule pt-12 md:grid-cols-2 lg:grid-cols-4">
+        <section className="grid grid-cols-2 gap-x-8 gap-y-12 border-t border-ink/15 pt-12 lg:grid-cols-4">
           {STATS.map((s, i) => (
-            <div key={i} className="border-t border-rule pt-5">
-              <div
-                className="font-serif font-medium leading-[1.05] tracking-[-0.02em] text-ink"
-                style={{ fontSize: "clamp(2.5rem, 4.5vw, 64px)" }}
-              >
-                {s.value}
-                {s.unit && (
-                  <span className="ml-1 font-sans text-base font-medium tracking-normal text-graphite">
-                    {s.unit}
-                  </span>
+            <div key={i} className="border-t border-ink/15 pt-6">
+              <div className="flex items-baseline gap-2">
+                <div
+                  className="font-sans font-black leading-[1] tracking-[-0.03em] text-ink"
+                  style={{ fontSize: "clamp(2.25rem, 4vw, 60px)" }}
+                >
+                  {s.value}
+                </div>
+                {s.suffix && (
+                  <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-graphite">
+                    {s.suffix}
+                  </div>
                 )}
               </div>
-              <div className="mt-3 max-w-[28ch] text-[15px] font-medium leading-relaxed text-ink">
+              <div className="mt-4 max-w-[28ch] text-[14px] leading-relaxed text-ink/75">
                 {s.label}
               </div>
             </div>
           ))}
         </section>
 
-        {/* Strength positioning */}
-        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-rule pt-12">
-          <div className="col-span-12 lg:col-span-3">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-ember">
+        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
+          <div className="col-span-12 lg:col-span-4">
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
               Why customers choose us
             </div>
-          </div>
-          <div className="col-span-12 lg:col-span-9">
-            <p
-              className="font-serif font-medium leading-[1.1] tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 44px)" }}
+            <h2
+              className="mt-6 font-sans font-black leading-[1.05] tracking-[-0.025em] text-ink"
+              style={{ fontSize: "clamp(1.75rem, 3.2vw, 40px)" }}
             >
               We bridge the gap between engineering intent and manufacturable
               reality.
-            </p>
-            <p className="mt-6 max-w-[62ch] text-[18px] leading-relaxed text-ink">
-              A true manufacturing partner, not just a vendor. We improve part
-              performance and cost simultaneously, on castings where the
-              tolerance and the timeline both matter.
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-8">
+            <p className="max-w-[62ch] text-[17px] leading-relaxed text-ink/80">
+              A manufacturing partner, not a vendor. We improve part performance
+              and cost simultaneously, on castings where tolerance and timeline
+              both matter.
             </p>
             <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
               {STRENGTHS.map((s) => (
-                <div key={s.title} className="border-t border-rule pt-5">
-                  <h3 className="font-serif font-medium text-[22px] leading-snug text-ink">
+                <div key={s.title} className="border-t border-ink/15 pt-6">
+                  <h3 className="font-sans font-bold text-[18px] leading-snug text-ink">
                     {s.title}
                   </h3>
-                  <p className="mt-3 text-[16px] leading-relaxed text-ink">
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink/75">
                     {s.body}
                   </p>
                 </div>
@@ -151,29 +151,31 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team disciplines */}
-        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-rule pt-12">
-          <div className="col-span-12 lg:col-span-3">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-ember">
+        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
+          <div className="col-span-12 lg:col-span-4">
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
               The team
             </div>
-          </div>
-          <div className="col-span-12 lg:col-span-9">
             <h2
-              className="font-serif font-medium leading-[1.05] tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(1.75rem, 3vw, 36px)" }}
+              className="mt-6 font-sans font-black leading-[1.05] tracking-[-0.025em] text-ink"
+              style={{ fontSize: "clamp(1.75rem, 3.2vw, 40px)" }}
             >
-              Five disciplines, applied as one shop.
+              Five disciplines, one shop.
             </h2>
-            <ul className="mt-10 space-y-6">
+          </div>
+          <div className="col-span-12 lg:col-span-8">
+            <ul className="space-y-6">
               {DISCIPLINES.map((d) => (
-                <li key={d.label} className="grid grid-cols-12 gap-6 border-t border-rule pt-5">
+                <li
+                  key={d.label}
+                  className="grid grid-cols-12 gap-6 border-t border-ink/15 pt-6"
+                >
                   <div className="col-span-12 md:col-span-4">
-                    <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+                    <div className="font-sans font-bold text-[16px] text-ink">
                       {d.label}
                     </div>
                   </div>
-                  <div className="col-span-12 md:col-span-8 text-[16px] leading-relaxed text-ink">
+                  <div className="col-span-12 md:col-span-8 text-[15px] leading-relaxed text-ink/75">
                     {d.body}
                   </div>
                 </li>
@@ -182,24 +184,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Leadership */}
-        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-rule pt-12">
-          <div className="col-span-12 lg:col-span-3">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-ember">
+        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
+          <div className="col-span-12 lg:col-span-4">
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
               Leadership
             </div>
-          </div>
-          <div className="col-span-12 lg:col-span-9">
-            <h3
-              className="font-serif font-medium leading-[1.05] tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(1.5rem, 2.5vw, 32px)" }}
+            <h2
+              className="mt-6 font-sans font-black leading-[1.05] tracking-[-0.025em] text-ink"
+              style={{ fontSize: "clamp(1.75rem, 3.2vw, 40px)" }}
             >
               Bret Hartman
-            </h3>
-            <div className="mt-2 font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+            </h2>
+            <div className="mt-3 font-mono text-[11px] tracking-[0.28em] uppercase text-graphite">
               President
             </div>
-            <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-ink">
+          </div>
+          <div className="col-span-12 lg:col-span-8">
+            <p className="max-w-[60ch] text-[17px] leading-relaxed text-ink/85">
               Hartman family ownership runs the shop floor through the
               engineering office. Decisions on metallurgy, scheduling, and
               customer commitments stay in-house.
@@ -207,38 +208,44 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Recent investments */}
-        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-rule pt-12">
-          <div className="col-span-12 lg:col-span-3">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-ember">
+        <section className="mt-32 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
+          <div className="col-span-12 lg:col-span-4">
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
               Recent investments
             </div>
+            <h2
+              className="mt-6 font-sans font-black leading-[1.05] tracking-[-0.025em] text-ink"
+              style={{ fontSize: "clamp(1.75rem, 3.2vw, 40px)" }}
+            >
+              Built forward.
+            </h2>
           </div>
-          <div className="col-span-12 lg:col-span-9">
+          <div className="col-span-12 lg:col-span-8">
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
               {RECENT.map((r) => (
-                <div key={r.label} className="border-t border-rule pt-5">
-                  <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite mb-3">
+                <div key={r.label} className="border-t border-ink/15 pt-6">
+                  <div className="font-sans font-bold text-[15px] text-ink mb-3">
                     {r.label}
                   </div>
-                  <p className="text-[15px] leading-relaxed text-ink">{r.body}</p>
+                  <p className="text-[14px] leading-relaxed text-ink/75">
+                    {r.body}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <div className="mt-32 border-t border-rule pt-16">
+        <section className="mt-40 border-t border-ink/15 pt-16">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-8">
               <h3
-                className="font-serif font-medium leading-[1.02] tracking-[-0.02em] text-ink"
-                style={{ fontSize: "clamp(2rem, 4vw, 56px)" }}
+                className="font-sans font-black leading-[1] tracking-[-0.03em] text-ink"
+                style={{ fontSize: "clamp(2.25rem, 5vw, 72px)" }}
               >
                 Need a foundry that engineers what it pours?
               </h3>
-              <p className="mt-5 max-w-[52ch] text-[18px] leading-relaxed text-ink">
+              <p className="mt-5 max-w-[52ch] text-[18px] leading-relaxed text-ink/80">
                 Send your print. DFM review and quote come back from the team
                 that will actually build the part.
               </p>
@@ -246,14 +253,23 @@ export default function AboutPage() {
             <div className="col-span-12 self-end lg:col-span-4 lg:text-right">
               <Link
                 href="/rfq"
-                className="inline-flex items-center gap-3 bg-ink px-7 py-4 font-sans text-[15px] tracking-[0.06em] text-paper hover:bg-iron"
+                className="group relative inline-flex items-center gap-3 overflow-hidden bg-ink px-7 py-4 font-sans text-[14px] font-semibold tracking-[0.04em] text-paper transition-colors duration-300 hover:text-light"
               >
-                Start an RFQ
-                <span aria-hidden>→</span>
+                <span
+                  aria-hidden
+                  className="absolute inset-0 origin-left scale-x-0 bg-ember transition-transform duration-500 ease-out group-hover:scale-x-100"
+                />
+                <span className="relative z-10">Start an RFQ</span>
+                <span
+                  aria-hidden
+                  className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </Link>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );

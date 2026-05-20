@@ -1,58 +1,146 @@
-import Link from "next/link";
+"use client";
 
-const POINTS = [
-  "V-process zero-draft sand casting, cast iron and steel.",
-  "3D-printed sand tooling for complex geometry.",
-  "Horizontal CNC machining, Fanuc and Mazak controls.",
-  "SolidWorks-led DFM consulting before any tooling spend.",
-  "Pour weight ten pounds to one thousand pounds.",
-  "Machined tolerance ±0.001 to ±0.005 inches.",
-  "One shop, one team, one schedule.",
-];
+import Link from "next/link";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Manifesto() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      gsap.from("[data-mf-meta]", {
+        opacity: 0,
+        y: 16,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 78%",
+          once: true,
+        },
+      });
+
+      gsap.from("[data-mf-quote] > span", {
+        opacity: 0,
+        y: 36,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          once: true,
+        },
+      });
+
+      gsap.from("[data-mf-attr]", {
+        opacity: 0,
+        y: 12,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 65%",
+          once: true,
+        },
+      });
+
+      gsap.from("[data-mf-rule]", {
+        scaleX: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 78%",
+          once: true,
+        },
+      });
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section className="relative bg-paper-deep py-32 px-6 md:px-10 lg:px-16">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-8">
-        <div className="col-span-12 lg:col-span-3">
-          <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
-            01 · How we work
+    <section
+      ref={sectionRef}
+      className="relative border-b border-rule/40 bg-paper px-6 py-40 md:px-10 lg:px-16"
+    >
+      <div className="mx-auto max-w-[1400px]">
+        <div
+          data-mf-rule
+          className="mx-auto h-px w-full origin-left bg-ink/15"
+        />
+
+        <div className="mx-auto mt-24 max-w-[1100px] text-center">
+          <div
+            data-mf-meta
+            className="font-mono text-[11px] tracking-[0.28em] uppercase text-graphite"
+          >
+            On the shop floor
           </div>
-          <div className="mt-2 h-px w-16 bg-ink/40" />
-        </div>
 
-        <div className="col-span-12 lg:col-span-7 lg:col-start-5 mb-10">
-          <p
-            className="font-serif font-medium leading-[1.1] tracking-[-0.02em] text-ink"
-            style={{ fontSize: "clamp(1.75rem, 3vw, 36px)" }}
+          <blockquote
+            data-mf-quote
+            className="mt-10 font-sans font-medium leading-[1.05] tracking-[-0.025em] text-ink"
+            style={{ fontSize: "clamp(2.25rem, 5.5vw, 76px)" }}
           >
-            We bridge the gap between engineering intent and manufacturable
-            reality.
-          </p>
+            <span className="block">We bridge the gap between</span>
+            <span className="block">engineering intent and</span>
+            <span className="block text-ember">manufacturable reality.</span>
+          </blockquote>
+
+          <div data-mf-attr className="mt-12 flex flex-col items-center gap-3">
+            <div className="h-px w-10 bg-ember" />
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-graphite">
+              Bret Hartman · President
+            </div>
+          </div>
         </div>
 
-        <ul className="col-span-12 space-y-5 lg:col-span-7 lg:col-start-5">
-          {POINTS.map((p, i) => (
-            <li
-              key={i}
-              className="flex items-baseline gap-4 text-[20px] leading-snug text-ink md:text-[22px]"
-              style={{ fontFeatureSettings: '"ss01"' }}
-            >
-              <span className="font-mono text-[12px] tracking-[0.2em] text-ember pt-[2px]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span>{p}</span>
-            </li>
+        <div className="mt-24 grid grid-cols-1 gap-12 md:grid-cols-3">
+          {[
+            {
+              t: "Engineered first",
+              b: "Geometry, gating, and machining strategy reviewed before any tooling spend. Print arrives, engineering responds — not a quote bot.",
+            },
+            {
+              t: "Vertically integrated",
+              b: "Design review, pattern, pour, machine, inspect — one shop, one schedule. No handoffs, no waiting on a subcontractor queue.",
+            },
+            {
+              t: "Spec-locked",
+              b: "±0.001″ machined tolerance. Material certs and dimensional reports with every shipment. The part performs because the process produced it that way.",
+            },
+          ].map((p) => (
+            <div key={p.t} className="border-t border-ink/15 pt-6">
+              <h3 className="font-sans text-[18px] font-semibold tracking-[-0.01em] text-ink">
+                {p.t}
+              </h3>
+              <p className="mt-3 max-w-[40ch] text-[15px] leading-relaxed text-ink/75">
+                {p.b}
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
 
-        <div className="col-span-12 lg:col-span-7 lg:col-start-5 mt-10">
+        <div className="mt-20 flex justify-center">
           <Link
-            href="/rfq"
-            className="inline-flex items-center gap-3 border-b border-ink pb-1 font-sans text-[15px] tracking-[0.04em] text-ink hover:border-ember hover:text-ember"
+            href="/process"
+            className="group inline-flex items-center gap-3 border-b border-ink pb-1 font-sans text-[14px] font-medium tracking-[0.04em] text-ink transition-colors hover:border-ember hover:text-ember"
           >
-            Send us your print
-            <span aria-hidden>→</span>
+            See the process
+            <span
+              aria-hidden
+              className="transition-transform duration-300 group-hover:translate-x-1.5"
+            >
+              →
+            </span>
           </Link>
         </div>
       </div>

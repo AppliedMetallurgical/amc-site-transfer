@@ -8,37 +8,37 @@ export const metadata = {
 
 const CAPABILITIES = [
   {
-    eyebrow: "01 / Design",
+    eyebrow: "Design",
     title: "Casting design + DFM consulting",
     body: "SolidWorks-led manufacturability analysis before any tooling spend. Geometry adjusted for moldability, solidification behavior, and downstream machining. We catch the problems on the screen, not on the floor.",
     tags: ["SolidWorks", "DFM review", "Concurrent engineering"],
   },
   {
-    eyebrow: "02 / Tooling",
+    eyebrow: "Tooling",
     title: "3D-printed pattern development",
     body: "Rapid prototype patterns produced in-house. Pattern iteration in days instead of weeks. Supports low-to-mid volume production and lets customers validate geometry before committing to hard tooling.",
     tags: ["Additive patterns", "Rapid prototyping", "Low-volume flexibility"],
   },
   {
-    eyebrow: "03 / Cast",
+    eyebrow: "Cast",
     title: "Sand casting — including V-process",
     body: "Cast iron and steel, 10 to 1,000 lbs. Engineered gating and risering systems control metal flow and solidification. Melt chemistry and pour parameters are optimized per part to minimize inclusions, porosity, and shrink.",
     tags: ["V-process", "Grey iron", "Ductile iron", "Steel"],
   },
   {
-    eyebrow: "04 / Process engineering",
+    eyebrow: "Process",
     title: "Gating, risering, defect reduction",
     body: "Gating design, risering layout, and controlled solidification strategy reduce scrap and rework. Root-cause analysis on inclusions, porosity, and surface defects — solved at the process level, not papered over with downstream fixes.",
     tags: ["Gating + risering", "Melt chemistry", "Defect analysis"],
   },
   {
-    eyebrow: "05 / Machine",
+    eyebrow: "Machine",
     title: "In-house horizontal CNC",
     body: "Mastercam toolpath programming. Fanuc and Mazak controls. Critical features held to ±0.001”–0.005”. Machining strategy is integrated early so cast geometry supports the finished tolerance, not just the rough shape.",
     tags: ["Mastercam", "Fanuc", "Mazak", "±0.001”"],
   },
   {
-    eyebrow: "06 / Validate",
+    eyebrow: "Validate",
     title: "Inspection + simulation",
     body: "Process and finished-part validation through simulation and real-world testing. Coordinated departmental scheduling keeps inspection on the same critical path as production, so problems surface before delivery, not after.",
     tags: ["Simulation", "First-article inspection", "Process validation"],
@@ -46,56 +46,62 @@ const CAPABILITIES = [
 ];
 
 const TOLERANCES = [
-  { label: "As-cast tolerance", value: "±0.030” – 0.125”", note: "Geometry and section dependent" },
-  { label: "Machined tolerance", value: "±0.001” – 0.005”", note: "Critical features, in-house CNC" },
-  { label: "Pour weight range", value: "10 – 1,000 lbs", note: "Cast iron and steel, ferrous only" },
-  { label: "Volume sweet spot", value: "Low – mid", note: "Production runs and prototyping" },
+  { label: "As-cast tolerance", value: "±0.030″", note: "Geometry and section dependent" },
+  { label: "Machined tolerance", value: "±0.001″", note: "Critical features, in-house CNC" },
+  { label: "Pour weight", value: "1,000 lb", note: "Maximum, cast iron and steel" },
+  { label: "Volume", value: "Low–mid", note: "Production runs and prototyping" },
 ];
 
 export default function CapabilitiesPage() {
   return (
     <main className="bg-paper pt-44 pb-32 px-6 md:px-10 lg:px-16">
       <div className="mx-auto max-w-[1400px]">
-        {/* Header */}
         <div className="mb-24 grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-9">
-            <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+          <div className="col-span-12 lg:col-span-10">
+            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
               Capabilities
             </div>
             <h1
-              className="mt-6 font-serif font-medium leading-[0.98] tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(2.5rem, 7vw, 108px)" }}
+              className="mt-6 font-sans font-black leading-[0.95] tracking-[-0.03em] text-ink"
+              style={{ fontSize: "clamp(2.5rem, 7.5vw, 124px)" }}
             >
               Concept to finished component.
             </h1>
-            <p className="mt-10 max-w-[60ch] text-[20px] leading-relaxed text-ink">
+            <p className="mt-10 max-w-[60ch] text-[19px] leading-relaxed text-ink/80">
               Vertically integrated from design review through final inspection.
               Six disciplines, one shop, one accountability line.
             </p>
           </div>
         </div>
 
-        {/* Capabilities grid */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-20 md:grid-cols-2">
           {CAPABILITIES.map((c, i) => (
-            <article key={i} className="border-t border-rule pt-6">
-              <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-ember">
-                {c.eyebrow}
+            <article key={i} className="border-t border-ink/15 pt-8">
+              <div className="flex items-baseline justify-between">
+                <div
+                  className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
+                  style={{ fontSize: "clamp(2.25rem, 3vw, 48px)" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+                  {c.eyebrow}
+                </div>
               </div>
               <h2
-                className="mt-4 font-serif font-medium leading-[1.05] tracking-[-0.02em] text-ink"
-                style={{ fontSize: "clamp(1.75rem, 3vw, 36px)" }}
+                className="mt-8 font-sans font-bold leading-[1.05] tracking-[-0.02em] text-ink"
+                style={{ fontSize: "clamp(1.5rem, 2.4vw, 30px)" }}
               >
                 {c.title}
               </h2>
-              <p className="mt-5 max-w-[52ch] text-[17px] leading-relaxed text-ink">
+              <p className="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-ink/80">
                 {c.body}
               </p>
-              <ul className="mt-6 flex flex-wrap gap-x-3 gap-y-2">
+              <ul className="mt-6 flex flex-wrap gap-x-2 gap-y-2">
                 {c.tags.map((t) => (
                   <li
                     key={t}
-                    className="border border-rule px-3 py-1 font-mono text-[11px] tracking-[0.16em] uppercase text-graphite"
+                    className="border border-ink/20 px-3 py-1 font-mono text-[10px] tracking-[0.22em] uppercase text-ink/70"
                   >
                     {t}
                   </li>
@@ -105,37 +111,41 @@ export default function CapabilitiesPage() {
           ))}
         </div>
 
-        {/* Tolerances */}
-        <section className="mt-32 border-t border-rule pt-16">
+        <section className="mt-40 border-t border-ink/15 pt-16">
           <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 lg:col-span-3">
-              <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+            <div className="col-span-12 lg:col-span-4">
+              <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
                 Tolerance strategy
               </div>
-              <div className="mt-2 h-px w-16 bg-ink/40" />
+              <h2
+                className="mt-6 font-sans font-black leading-[1] tracking-[-0.03em] text-ink"
+                style={{ fontSize: "clamp(2rem, 4vw, 48px)" }}
+              >
+                Cost where it can be. Spec where it has to be.
+              </h2>
             </div>
-            <div className="col-span-12 lg:col-span-9">
-              <p className="max-w-[60ch] text-[19px] leading-relaxed text-ink">
+            <div className="col-span-12 lg:col-span-8">
+              <p className="max-w-[60ch] text-[18px] leading-relaxed text-ink/80">
                 We work with customers to define a tolerance strategy that
                 balances cost against performance. As-cast features stay
-                cost-efficient; critical features get the in-house CNC pass.
+                cost-efficient. Critical features get the in-house CNC pass.
               </p>
             </div>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
             {TOLERANCES.map((t) => (
-              <div key={t.label} className="border-t border-rule pt-5">
-                <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
+              <div key={t.label} className="border-t border-ink/15 pt-6">
+                <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                   {t.label}
                 </div>
                 <div
-                  className="mt-3 font-serif font-medium leading-[1] tracking-[-0.02em] text-ink"
-                  style={{ fontSize: "clamp(2rem, 3.5vw, 48px)" }}
+                  className="mt-4 font-sans font-black leading-[1] tracking-[-0.03em] text-ink"
+                  style={{ fontSize: "clamp(2rem, 3.2vw, 44px)" }}
                 >
                   {t.value}
                 </div>
-                <div className="mt-2 max-w-[24ch] text-[15px] leading-relaxed text-ink-soft">
+                <div className="mt-3 max-w-[24ch] text-[14px] leading-relaxed text-ink/70">
                   {t.note}
                 </div>
               </div>
@@ -143,17 +153,16 @@ export default function CapabilitiesPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <div className="mt-32 border-t border-rule pt-16">
+        <section className="mt-40 border-t border-ink/15 pt-16">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-8">
               <h3
-                className="font-serif font-medium leading-[1.02] tracking-[-0.02em] text-ink"
-                style={{ fontSize: "clamp(2rem, 4vw, 56px)" }}
+                className="font-sans font-black leading-[1] tracking-[-0.03em] text-ink"
+                style={{ fontSize: "clamp(2.25rem, 5vw, 72px)" }}
               >
                 Send us your print.
               </h3>
-              <p className="mt-5 max-w-[52ch] text-[18px] leading-relaxed text-ink">
+              <p className="mt-5 max-w-[52ch] text-[18px] leading-relaxed text-ink/80">
                 STEP, IGES, SolidWorks, or PDF. We&rsquo;ll review the geometry,
                 flag the manufacturability issues, and quote it back.
               </p>
@@ -161,14 +170,23 @@ export default function CapabilitiesPage() {
             <div className="col-span-12 self-end lg:col-span-4 lg:text-right">
               <Link
                 href="/rfq"
-                className="inline-flex items-center gap-3 bg-ink px-7 py-4 font-sans text-[15px] tracking-[0.06em] text-paper hover:bg-iron"
+                className="group relative inline-flex items-center gap-3 overflow-hidden bg-ink px-7 py-4 font-sans text-[14px] font-semibold tracking-[0.04em] text-paper transition-colors duration-300 hover:text-light"
               >
-                Start an RFQ
-                <span aria-hidden>→</span>
+                <span
+                  aria-hidden
+                  className="absolute inset-0 origin-left scale-x-0 bg-ember transition-transform duration-500 ease-out group-hover:scale-x-100"
+                />
+                <span className="relative z-10">Start an RFQ</span>
+                <span
+                  aria-hidden
+                  className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </Link>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );

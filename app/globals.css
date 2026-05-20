@@ -82,7 +82,8 @@ body {
   transition: none !important;
 }
 
-body.intro-lock {
+body.intro-lock,
+body.drawer-lock {
   overflow: hidden;
 }
 
