@@ -37,7 +37,7 @@ const TILES = [
     mark: "Cut",
     eyebrow: "Machine",
     title: "Horizontal CNC",
-    body: "Mastercam. Fanuc, Mazak 8800, and Enshu 4-axis capacity. Critical features to ±0.001\".",
+    body: "Mastercam. Fanuc, Mazak 8800, and Enshu 4-axis capacity. Critical features to ±0.0005\".",
   },
   {
     mark: "Certify",

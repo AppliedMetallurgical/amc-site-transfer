@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 const STATS = [
-  { value: "±0.001\"", label: "Machined tolerance — in-house horizontal CNC" },
+  { value: "±0.0005\"", label: "Machined tolerance — in-house horizontal CNC" },
   { value: "2021", label: "Applied Metallurgical founded in Gilmer, Texas" },
   { value: "25–30%", label: "Projected net profit margin after four years in business" },
   { value: "8", suffix: "tons/day", label: "Planned Plant 2 casting capacity" },

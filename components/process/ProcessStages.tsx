@@ -43,7 +43,7 @@ const STEPS: Step[] = [
     mark: "Cut",
     title: "Machine",
     body: "Critical features cut on in-house horizontal CNC. Mastercam programming, Fanuc and Mazak controls, Mazak 8800 capacity, and dedicated Enshu 4-axis medical-part production. Machining strategy planned during DFM so cast geometry supports the finished tolerance.",
-    deliverable: "Machined part, ±0.001”–±0.005”",
+    deliverable: "Machined part, ±0.0005”",
   },
   {
     mark: "Proof",

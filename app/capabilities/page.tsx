@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Capabilities — Casting, CNC, DFM, Pattern Development",
   description:
-    "Vertically integrated cast iron and steel foundry: V-process sand casting, in-house CNC machining, SolidWorks DFM, Mastercam programming, 3D-printed pattern tooling. ±0.001” machined tolerance.",
+    "Vertically integrated cast iron and steel foundry: V-process sand casting, in-house CNC machining, SolidWorks DFM, Mastercam programming, 3D-printed pattern tooling. ±0.0005” machined tolerance.",
 };
 
 const CAPABILITIES = [
@@ -34,8 +34,8 @@ const CAPABILITIES = [
   {
     eyebrow: "Machine",
     title: "In-house horizontal CNC",
-    body: "Mastercam toolpath programming. Fanuc and Mazak controls. Critical features held to ±0.001”–0.005”. Machining strategy is integrated early so cast geometry supports the finished tolerance, not just the rough shape.",
-    tags: ["Mastercam", "Fanuc", "Mazak", "±0.001”"],
+    body: "Mastercam toolpath programming. Fanuc and Mazak controls. Critical features held to ±0.0005”. Machining strategy is integrated early so cast geometry supports the finished tolerance, not just the rough shape.",
+    tags: ["Mastercam", "Fanuc", "Mazak", "±0.0005”"],
   },
   {
     eyebrow: "Validate",
@@ -47,7 +47,7 @@ const CAPABILITIES = [
 
 const TOLERANCES = [
   { label: "As-cast tolerance", value: "±0.030″", note: "Geometry and section dependent" },
-  { label: "Machined tolerance", value: "±0.001″", note: "Critical features, in-house CNC" },
+  { label: "Machined tolerance", value: "±0.0005″", note: "Critical features, in-house CNC" },
   { label: "Pour weight", value: "1,000 lb", note: "Maximum, cast iron and steel" },
   { label: "Volume", value: "Low–mid", note: "Production runs and prototyping" },
 ];

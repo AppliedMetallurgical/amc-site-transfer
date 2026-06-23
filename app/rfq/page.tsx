@@ -155,7 +155,7 @@ export default function RFQPage() {
                   Founded
                 </div>
                 <div className="text-[16px] text-ink">
-                  1912 · Universal Electric Foundry, Chicago
+                  Founded in Gilmer, Texas
                 </div>
               </div>
             </div>

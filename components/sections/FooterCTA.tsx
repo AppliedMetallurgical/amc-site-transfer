@@ -140,7 +140,7 @@ export function FooterCTA() {
               Founded
             </div>
             <div className="text-[15px] text-light/95">
-              1912 · Universal Electric Foundry, Chicago
+              Founded in Gilmer, Texas
             </div>
           </div>
         </div>

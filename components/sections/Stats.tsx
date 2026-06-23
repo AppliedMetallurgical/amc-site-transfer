@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
-  { value: "±0.001\"", label: "Machined tolerance — in-house horizontal CNC" },
+  { value: "±0.0005\"", label: "Machined tolerance — in-house horizontal CNC" },
   { value: "8", suffix: "tons/day", label: "Planned Plant 2 casting capacity" },
   { value: "200%", label: "V-process production efficiency growth, 2022–2025" },
   { value: "36", suffix: "pallets", label: "Planned Mazak 8800 automation systems" },

@@ -115,7 +115,7 @@ export function Manifesto() {
             },
             {
               t: "Spec-locked",
-              b: "±0.001″ machined tolerance, with 2026 clean-room CMM inspection supporting .0001″ measurement on machined surfaces. The part performs because the process produced it that way.",
+              b: "±0.0005″ machined tolerance, with 2026 clean-room CMM inspection supporting .0001″ measurement on machined surfaces. The part performs because the process produced it that way.",
             },
           ].map((p) => (
             <div key={p.t} className="border-t border-ink/15 pt-6">
