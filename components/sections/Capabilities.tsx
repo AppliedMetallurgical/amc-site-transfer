@@ -25,7 +25,7 @@ const TILES = [
     mark: "Pour",
     eyebrow: "Cast",
     title: "V-process sand casting",
-    body: "Cast iron, steel, ductile and grey iron. 10 to 1,000 lbs pour.",
+    body: "Cast iron, ductile iron, and grey iron. 10 to 1,000 lbs pour.",
   },
   {
     mark: "Tune",

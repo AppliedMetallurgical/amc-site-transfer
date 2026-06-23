@@ -86,7 +86,7 @@ export function FeatureCard() {
             </h2>
 
             <p className="mt-6 max-w-[44ch] text-[17px] leading-relaxed text-ink/80">
-              Cast iron and steel components for medical equipment, heavy
+              Cast iron and ductile iron components for medical equipment, heavy
               industrial machinery, and OEM transportation. From 10-lb
               prototypes to 1,000-lb structural castings — engineered, poured,
               and machined under one roof.

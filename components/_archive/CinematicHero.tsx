@@ -110,7 +110,7 @@ export function CinematicHero() {
           className="font-serif text-center font-medium leading-[0.95] tracking-[-0.02em] text-ink"
           style={{ fontSize: "clamp(2.5rem, 7vw, 108px)" }}
         >
-          <span className="block">Cast iron and steel,</span>
+          <span className="block">Cast iron and ductile iron,</span>
           <span className="block">machined in Gilmer.</span>
         </h1>
         <p
@@ -118,7 +118,7 @@ export function CinematicHero() {
           className="mx-auto mt-8 max-w-[60ch] text-center text-[19px] leading-relaxed text-ink md:text-[21px]"
         >
           Applied Metallurgical Corp. is a sixteen-person ferrous foundry and
-          CNC machine shop in Gilmer, Texas. Cast iron and steel, ten to one
+          CNC machine shop in Gilmer, Texas. Cast iron and ductile iron, ten to one
           thousand pounds.
         </p>
       </div>

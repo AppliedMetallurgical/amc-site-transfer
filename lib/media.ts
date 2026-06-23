@@ -1,6 +1,6 @@
 export const HERO_IMAGE = {
   src: "/brand/hero-pour.jpg",
-  alt: "Molten iron poured from a steel ladle into a sand mold inside a foundry.",
+  alt: "Molten ductile iron poured from a ladle into a sand mold inside a foundry.",
   width: 1376,
   height: 768,
 };

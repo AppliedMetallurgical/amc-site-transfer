@@ -27,11 +27,11 @@ const ebGaramond = EB_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL("https://appliedmetallurgical.com"),
   title: {
-    default: "Applied Metallurgical Corp. — Cast Iron, Steel, CNC. Gilmer, TX.",
+    default: "Applied Metallurgical Corp. — Cast Iron, Ductile Iron, CNC. Gilmer, TX.",
     template: "%s | Applied Metallurgical Corp.",
   },
   description:
-    "Sixteen-person ferrous foundry and CNC machine shop. Cast iron and steel, 10 to 1,000 lbs. V-process zero-draft sand casting, 3D-printed sand tooling, in-house horizontal CNC. Gilmer, Texas.",
+    "Sixteen-person ferrous foundry and CNC machine shop. Cast iron and ductile iron, 10 to 1,000 lbs. V-process zero-draft sand casting, 3D-printed sand tooling, in-house horizontal CNC. Gilmer, Texas.",
   applicationName: "Applied Metallurgical Corp.",
   authors: [{ name: "Applied Metallurgical Corp." }],
   openGraph: {

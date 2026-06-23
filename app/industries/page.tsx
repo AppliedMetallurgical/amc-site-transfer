@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Industries — Medical, Transportation, OEM Industrial",
   description:
-    "Cast iron and steel components for medical equipment, heavy equipment, transportation, and OEM industrial manufacturing. Load-bearing, vibration dampening, dimensional stability — built for critical applications.",
+    "Cast iron and ductile iron components for medical equipment, heavy equipment, transportation, and OEM industrial manufacturing. Load-bearing, vibration dampening, dimensional stability — built for critical applications.",
 };
 
 const INDUSTRIES = [
@@ -150,7 +150,7 @@ export default function IndustriesPage() {
                 Different vertical? Ask anyway.
               </h3>
               <p className="mt-5 max-w-[52ch] text-[18px] leading-relaxed text-ink/80">
-                Cast iron and steel components, 10 to 1,000 lbs, where
+                Cast iron and ductile iron components, 10 to 1,000 lbs, where
                 structural integrity matters. If your application sits adjacent
                 to what we pour, send the print.
               </p>

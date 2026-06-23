@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata = {
   title: "About — Applied Metallurgical Corp., Gilmer Texas",
   description:
-    "Applied Metallurgical Corp. is a vertically integrated cast iron, steel, V-process, and CNC machining operation in Gilmer, Texas. Founded in 2021 with Hartman foundry lineage through Commercial Castings and Commercial Machine.",
+    "Applied Metallurgical Corp. is a vertically integrated cast iron, ductile iron, V-process, and CNC machining operation in Gilmer, Texas. Founded in 2021 with Hartman foundry lineage through Commercial Castings and Commercial Machine.",
 };
 
 const STATS = [

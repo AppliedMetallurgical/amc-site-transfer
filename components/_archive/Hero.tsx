@@ -98,7 +98,7 @@ export function Hero() {
         {/* Top: eyebrow */}
         <div data-hero-eyebrow className="font-mono text-[11px] tracking-[0.32em] uppercase text-pour">
           Applied Metallurgical Corp.
-          <span className="ml-3 text-steel">/ Gilmer, Texas</span>
+          <span className="ml-3 text-graphite">/ Gilmer, Texas</span>
         </div>
 
         {/* Middle: headline + body */}
@@ -116,7 +116,7 @@ export function Hero() {
           <div className="col-span-12 max-w-[40ch] self-end lg:col-span-3 lg:pb-3">
             <div data-hero-rule className="mb-5 h-px w-24 bg-pour" />
             <p data-hero-body className="text-base leading-relaxed text-cast">
-              Cast iron and steel components, 10&nbsp;to 1,000&nbsp;lbs. V-process zero-draft sand casting, 3D-printed sand tooling, in-house CNC machining.
+              Cast iron and ductile iron components, 10&nbsp;to 1,000&nbsp;lbs. V-process zero-draft sand casting, 3D-printed sand tooling, in-house CNC machining.
             </p>
           </div>
         </div>
@@ -124,7 +124,7 @@ export function Hero() {
         {/* Bottom: stats / meta strip */}
         <div
           data-hero-meta
-          className="grid grid-cols-2 border-t border-mill/60 pt-6 font-mono text-[11px] tracking-[0.18em] uppercase text-steel md:grid-cols-4"
+          className="grid grid-cols-2 border-t border-mill/60 pt-6 font-mono text-[11px] tracking-[0.18em] uppercase text-graphite md:grid-cols-4"
         >
           <div>
             <div className="text-pour mb-1">As-cast tolerance</div>

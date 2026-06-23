@@ -114,7 +114,7 @@ export function Hero() {
             style={{ fontSize: "clamp(3rem, 9vw, 140px)" }}
           >
             <span data-h-line className="block">
-              Cast iron and steel.
+              Cast iron and ductile iron.
             </span>
             <span data-h-line className="block text-ember-bright">
               Engineered to spec.

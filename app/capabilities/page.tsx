@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Capabilities — Casting, CNC, DFM, Pattern Development",
   description:
-    "Vertically integrated cast iron and steel foundry: V-process sand casting, in-house CNC machining, SolidWorks DFM, Mastercam programming, 3D-printed pattern tooling. ±0.0005” machined tolerance.",
+    "Vertically integrated cast iron and ductile iron foundry: V-process sand casting, in-house CNC machining, SolidWorks DFM, Mastercam programming, 3D-printed pattern tooling. ±0.0005” machined tolerance.",
 };
 
 const CAPABILITIES = [
@@ -22,8 +22,8 @@ const CAPABILITIES = [
   {
     eyebrow: "Cast",
     title: "Sand casting — including V-process",
-    body: "Cast iron and steel, 10 to 1,000 lbs. Engineered gating and risering systems control metal flow and solidification. Melt chemistry and pour parameters are optimized per part to minimize inclusions, porosity, and shrink.",
-    tags: ["V-process", "Grey iron", "Ductile iron", "Steel"],
+    body: "Cast iron and ductile iron, 10 to 1,000 lbs. Engineered gating and risering systems control metal flow and solidification. Melt chemistry and pour parameters are optimized per part to minimize inclusions, porosity, and shrink.",
+    tags: ["V-process", "Grey iron", "Ductile iron"],
   },
   {
     eyebrow: "Process",
@@ -48,7 +48,7 @@ const CAPABILITIES = [
 const TOLERANCES = [
   { label: "As-cast tolerance", value: "±0.030″", note: "Geometry and section dependent" },
   { label: "Machined tolerance", value: "±0.0005″", note: "Critical features, in-house CNC" },
-  { label: "Pour weight", value: "1,000 lb", note: "Maximum, cast iron and steel" },
+  { label: "Pour weight", value: "1,000 lb", note: "Maximum, cast iron and ductile iron" },
   { label: "Volume", value: "Low–mid", note: "Production runs and prototyping" },
 ];
 
