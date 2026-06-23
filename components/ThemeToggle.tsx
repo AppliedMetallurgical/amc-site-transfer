@@ -11,15 +11,17 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined"
-      ? (localStorage.getItem(STORAGE_KEY) as Theme | null)
-      : null);
-    const current =
-      (document.documentElement.getAttribute("data-theme") as Theme | null) ??
-      stored ??
-      "light";
-    setTheme(current);
-    setMounted(true);
+    const timer = window.setTimeout(() => {
+      const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
+      const current =
+        (document.documentElement.getAttribute("data-theme") as Theme | null) ??
+        stored ??
+        "light";
+      setTheme(current);
+      setMounted(true);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   function toggle() {
