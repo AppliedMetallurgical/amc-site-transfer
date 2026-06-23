@@ -99,4 +99,13 @@ body.drawer-lock {
   line-height: 1.45;
 }
 
+.font-mono.text-\[10px\].tracking-\[0\.28em\].uppercase,
+.font-mono.text-\[10px\].tracking-\[0\.24em\].uppercase,
+.font-mono.text-\[10px\].tracking-\[0\.22em\].uppercase {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.45;
+}
+
 
