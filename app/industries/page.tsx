@@ -78,22 +78,17 @@ export default function IndustriesPage() {
         </div>
 
         <div className="space-y-24">
-          {INDUSTRIES.map((ind, i) => (
+          {INDUSTRIES.map((ind) => (
             <article
-              key={i}
+              key={ind.eyebrow}
               className="grid grid-cols-12 gap-8 border-t border-ink/15 pt-12"
             >
               <div className="col-span-12 lg:col-span-5">
-                <div className="flex items-baseline gap-4">
-                  <div
-                    className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                    style={{ fontSize: "clamp(2rem, 3vw, 44px)" }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+                <div className="inline-flex items-center gap-3 border border-ember/30 px-3 py-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
+                  <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                     {ind.eyebrow}
-                  </div>
+                  </span>
                 </div>
                 <h2
                   className="mt-6 font-sans font-black leading-[1.05] tracking-[-0.025em] text-ink"

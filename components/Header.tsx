@@ -8,13 +8,13 @@ import { LogoMark } from "@/components/LogoMark";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const NAV_PRIMARY = [
-  { n: "01", label: "Capabilities", href: "/capabilities" },
-  { n: "02", label: "Industries", href: "/industries" },
-  { n: "03", label: "Process", href: "/process" },
-  { n: "04", label: "About", href: "/about" },
+  { label: "Capabilities", href: "/capabilities" },
+  { label: "Industries", href: "/industries" },
+  { label: "Process", href: "/process" },
+  { label: "About", href: "/about" },
 ];
 
-const NAV_FULL = [...NAV_PRIMARY, { n: "05", label: "Request a quote", href: "/rfq" }];
+const NAV_FULL = [...NAV_PRIMARY, { label: "Request a quote", href: "/rfq" }];
 
 const SCROLL_HIDE_THRESHOLD = 100;
 const SCROLL_DELTA = 6;
@@ -59,7 +59,8 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    setOpen(false);
+    const frame = window.requestAnimationFrame(() => setOpen(false));
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   useEffect(() => {
@@ -83,7 +84,7 @@ export function Header() {
           showBg ? "bg-iron-deep/92 backdrop-blur-md" : "bg-transparent"
         )}
       >
-        <div className="mx-auto grid h-28 max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-6 px-6 md:h-32 md:px-10 lg:px-16">
+        <div className="mx-auto grid h-16 max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-6 px-6 md:h-20 md:px-10 lg:px-16">
           <Link
             href="/"
             className="flex items-center"
@@ -100,17 +101,10 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-label={item.label}
                   aria-current={active ? "page" : undefined}
-                  className="group relative flex items-center gap-2"
+                  className="group relative flex items-center overflow-hidden px-1 py-2"
                 >
-                  <span
-                    className={cn(
-                      "font-mono text-[11px] tracking-[0.22em] transition-colors duration-300",
-                      active ? "text-ember-bright" : "text-ember-bright/60 group-hover:text-ember-bright"
-                    )}
-                  >
-                    {item.n}
-                  </span>
                   <span className="relative overflow-hidden">
                     <span
                       aria-hidden
@@ -134,11 +128,15 @@ export function Header() {
                   <span
                     aria-hidden
                     className={cn(
-                      "pointer-events-none absolute -bottom-2 left-0 right-0 h-[2px] bg-ember-bright transition-[transform,opacity] duration-400 ease-out",
+                      "pointer-events-none absolute bottom-0 left-0 right-0 h-[2px] bg-ember-bright transition-[transform,opacity] duration-400 ease-out",
                       active
                         ? "origin-left scale-x-100 opacity-100"
                         : "origin-left scale-x-0 opacity-0"
                     )}
+                  />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -right-2 top-1 h-1.5 w-1.5 rounded-full bg-ember-bright opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </Link>
               );
@@ -223,14 +221,14 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex items-baseline gap-5 border-b border-light/15 py-6 font-sans text-[40px] font-semibold leading-[0.95] tracking-[-0.01em] transition-colors",
+                  "flex items-center justify-between border-b border-light/15 py-6 font-sans text-[40px] font-semibold leading-[0.95] tracking-[-0.01em] transition-colors",
                   active ? "text-light" : "text-light/70 hover:text-light"
                 )}
               >
-                <span className="font-mono text-[11px] tracking-[0.24em] uppercase text-ember-bright">
-                  {item.n} /
+                <span>{item.label}</span>
+                <span aria-hidden className="text-[24px] text-ember-bright">
+                  →
                 </span>
-                {item.label}
               </Link>
             );
           })}

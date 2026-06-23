@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
   { value: "±0.001\"", label: "Machined tolerance — in-house horizontal CNC" },
-  { value: "1,000 lb", label: "Maximum pour weight — cast iron and steel" },
-  { value: "112", suffix: "years", label: "Continuous foundry lineage to 1912" },
-  { value: "1", suffix: "shop", label: "Design through inspection, no handoffs" },
+  { value: "8", suffix: "tons/day", label: "Planned Plant 2 casting capacity" },
+  { value: "200%", label: "V-process production efficiency growth, 2022–2025" },
+  { value: "36", suffix: "pallets", label: "Planned Mazak 8800 automation systems" },
 ];
 
 export function Stats() {
@@ -57,7 +57,7 @@ export function Stats() {
       <div className="mx-auto max-w-[1400px]">
         <div data-stat-meta className="mb-16 max-w-[700px]">
           <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember-bright">
-            By the numbers
+            Shop proof
           </div>
           <h2
             className="mt-6 font-sans font-black leading-[0.98] tracking-[-0.02em]"

@@ -147,7 +147,12 @@ export function FooterCTA() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-2 border-t border-light/10 pt-6 text-[11px] tracking-[0.22em] uppercase text-light/45 md:flex-row md:items-center">
           <div>© {new Date().getFullYear()} Applied Metallurgical Corp.</div>
-          <div>Cast iron · Steel · V-process · 3D-printed tooling · CNC</div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>Cast iron · Steel · V-process · 3D-printed tooling · CNC</span>
+            <Link href="/privacy" className="underline underline-offset-4 hover:text-ember-bright">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </section>

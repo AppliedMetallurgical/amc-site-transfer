@@ -40,8 +40,8 @@ const CAPABILITIES = [
   {
     eyebrow: "Validate",
     title: "Inspection + simulation",
-    body: "Process and finished-part validation through simulation and real-world testing. Coordinated departmental scheduling keeps inspection on the same critical path as production, so problems surface before delivery, not after.",
-    tags: ["Simulation", "First-article inspection", "Process validation"],
+    body: "Process and finished-part validation through simulation, CMM inspection, and real-world testing. A 2026 clean-room inspection department supports temperature and humidity controlled measurement to .0001\" on machined surfaces.",
+    tags: ["Simulation", "CMM inspection", "Clean room", ".0001\" measurement"],
   },
 ];
 
@@ -69,27 +69,23 @@ export default function CapabilitiesPage() {
             </h1>
             <p className="mt-10 max-w-[60ch] text-[19px] leading-relaxed text-ink/80">
               Vertically integrated from design review through final inspection.
-              Six disciplines, one shop, one accountability line.
+              V-process casting, Mazak and Enshu machining, CMM inspection, one
+              shop, one accountability line.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-x-12 gap-y-20 md:grid-cols-2">
-          {CAPABILITIES.map((c, i) => (
-            <article key={i} className="border-t border-ink/15 pt-8">
-              <div className="flex items-baseline justify-between">
-                <div
-                  className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                  style={{ fontSize: "clamp(2.25rem, 3vw, 48px)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+          {CAPABILITIES.map((c) => (
+            <article key={c.title} className="border-t border-ink/15 pt-8">
+              <div className="inline-flex items-center gap-3 border border-ember/30 px-3 py-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
+                <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                   {c.eyebrow}
-                </div>
+                </span>
               </div>
               <h2
-                className="mt-8 font-sans font-bold leading-[1.05] tracking-[-0.02em] text-ink"
+                className="mt-7 font-sans font-bold leading-[1.05] tracking-[-0.02em] text-ink"
                 style={{ fontSize: "clamp(1.5rem, 2.4vw, 30px)" }}
               >
                 {c.title}

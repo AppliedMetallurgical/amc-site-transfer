@@ -61,16 +61,11 @@ export default function CaseStudyPage() {
 
         <section className="grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
           <div className="col-span-12 lg:col-span-4">
-            <div className="flex items-baseline gap-4">
-              <div
-                className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                style={{ fontSize: "clamp(2rem, 3vw, 44px)" }}
-              >
-                01
-              </div>
-              <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+            <div className="inline-flex items-center gap-3 border border-ember/30 px-3 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
+              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                 The requirement
-              </div>
+              </span>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-8">
@@ -92,16 +87,11 @@ export default function CaseStudyPage() {
 
         <section className="mt-20 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
           <div className="col-span-12 lg:col-span-4">
-            <div className="flex items-baseline gap-4">
-              <div
-                className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                style={{ fontSize: "clamp(2rem, 3vw, 44px)" }}
-              >
-                02
-              </div>
-              <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+            <div className="inline-flex items-center gap-3 border border-ember/30 px-3 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
+              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                 The challenge
-              </div>
+              </span>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-8">
@@ -123,16 +113,11 @@ export default function CaseStudyPage() {
 
         <section className="mt-20 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
           <div className="col-span-12 lg:col-span-4">
-            <div className="flex items-baseline gap-4">
-              <div
-                className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                style={{ fontSize: "clamp(2rem, 3vw, 44px)" }}
-              >
-                03
-              </div>
-              <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+            <div className="inline-flex items-center gap-3 border border-ember/30 px-3 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
+              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                 The approach
-              </div>
+              </span>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-8">
@@ -143,14 +128,12 @@ export default function CaseStudyPage() {
               Solved at the process level.
             </h2>
             <ul className="mt-10 space-y-6">
-              {APPROACH.map((step, i) => (
+              {APPROACH.map((step) => (
                 <li
-                  key={i}
+                  key={step}
                   className="grid grid-cols-[auto_1fr] gap-6 border-t border-ink/15 pt-6"
                 >
-                  <span className="font-mono text-[12px] tracking-[0.24em] uppercase text-ember pt-1">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  <span className="mt-2 h-px w-10 bg-ember" aria-hidden />
                   <span className="max-w-[60ch] text-[17px] leading-relaxed text-ink/85">
                     {step}
                   </span>
@@ -162,16 +145,11 @@ export default function CaseStudyPage() {
 
         <section className="mt-20 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
           <div className="col-span-12 lg:col-span-4">
-            <div className="flex items-baseline gap-4">
-              <div
-                className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                style={{ fontSize: "clamp(2rem, 3vw, 44px)" }}
-              >
-                04
-              </div>
-              <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
+            <div className="inline-flex items-center gap-3 border border-ember/30 px-3 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
+              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                 Contributions
-              </div>
+              </span>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-8">

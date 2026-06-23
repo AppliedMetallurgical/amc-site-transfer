@@ -10,40 +10,40 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TILES = [
   {
-    n: "01",
+    mark: "Shape",
     eyebrow: "Design",
     title: "DFM consulting",
     body: "SolidWorks-led manufacturability review before any tooling spend.",
   },
   {
-    n: "02",
+    mark: "Prove",
     eyebrow: "Tooling",
     title: "3D-printed patterns",
     body: "Rapid prototype patterns produced in-house. Iteration in days.",
   },
   {
-    n: "03",
+    mark: "Pour",
     eyebrow: "Cast",
     title: "V-process sand casting",
     body: "Cast iron, steel, ductile and grey iron. 10 to 1,000 lbs pour.",
   },
   {
-    n: "04",
+    mark: "Tune",
     eyebrow: "Process",
     title: "Engineered gating",
     body: "Gating, risering, defect reduction solved at the process level.",
   },
   {
-    n: "05",
+    mark: "Cut",
     eyebrow: "Machine",
     title: "Horizontal CNC",
-    body: "Mastercam. Fanuc and Mazak controls. Critical features to ±0.001\".",
+    body: "Mastercam. Fanuc, Mazak 8800, and Enshu 4-axis capacity. Critical features to ±0.001\".",
   },
   {
-    n: "06",
+    mark: "Certify",
     eyebrow: "Validate",
     title: "Inspection + simulation",
-    body: "First-article inspection, process validation, dimensional reports.",
+    body: "CMM inspection, clean-room buildout, process validation, dimensional reports.",
   },
 ];
 
@@ -103,9 +103,9 @@ export function Capabilities() {
               Concept to finished component.
             </h2>
             <p className="mt-6 max-w-[60ch] text-[17px] leading-relaxed text-ink/80">
-              Six disciplines, one shop. Vertically integrated from design
-              review through final inspection — no handoffs, no schedule
-              slippage waiting on someone else&rsquo;s queue.
+              Six disciplines, one shop. Vertically integrated from V-process
+              casting through Mazak / Enshu machining and CMM inspection — no
+              handoffs, no schedule slippage waiting on someone else&rsquo;s queue.
             </p>
           </div>
         </div>
@@ -116,7 +116,7 @@ export function Capabilities() {
         >
           {TILES.map((t) => (
             <Link
-              key={t.n}
+              key={t.title}
               href="/capabilities"
               data-cap-tile
               className="group relative flex flex-col justify-between bg-paper p-8 transition-[transform,background-color,box-shadow] duration-500 ease-out hover:bg-paper-deep md:p-10 lg:min-h-[280px]"
@@ -129,10 +129,9 @@ export function Capabilities() {
 
               <div className="flex items-baseline justify-between">
                 <div
-                  className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                  style={{ fontSize: "clamp(2rem, 3vw, 48px)" }}
+                  className="font-sans text-[13px] font-black uppercase tracking-[0.18em] text-ember"
                 >
-                  {t.n}
+                  {t.mark}
                 </div>
                 <div className="font-mono text-[10px] tracking-[0.28em] uppercase text-graphite">
                   {t.eyebrow}

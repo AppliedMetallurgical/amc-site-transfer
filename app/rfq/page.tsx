@@ -119,14 +119,12 @@ export default function RFQPage() {
                     "Engineering reviews geometry, materials, and target volume against our process.",
                     "DFM feedback returned — gating, machinability, tolerance strategy.",
                     "Quote with lead time, tooling approach, and pricing.",
-                  ].map((step, i) => (
+                  ].map((step) => (
                     <li
-                      key={i}
+                      key={step}
                       className="grid grid-cols-[auto_1fr] gap-4 border-t border-ink/15 pt-4 text-[15px] leading-relaxed text-ink/85"
                     >
-                      <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-ember pt-1">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                      <span className="mt-2 h-2 w-2 rounded-full bg-ember" aria-hidden />
                       <span>{step}</span>
                     </li>
                   ))}

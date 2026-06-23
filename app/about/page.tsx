@@ -1,16 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "About — Hartman Family Foundry, Gilmer Texas",
+  title: "About — Applied Metallurgical Corp., Gilmer Texas",
   description:
-    "Applied Metallurgical Corp. is a cast iron and steel foundry in Gilmer, Texas, owned by the Hartman family. Metalcasting lineage to Universal Electric Foundry, Chicago, 1912.",
+    "Applied Metallurgical Corp. is a vertically integrated cast iron, steel, V-process, and CNC machining operation in Gilmer, Texas. Founded in 2021 with Hartman foundry lineage through Commercial Castings and Commercial Machine.",
 };
 
 const STATS = [
   { value: "±0.001\"", label: "Machined tolerance — in-house horizontal CNC" },
-  { value: "1,000 lb", label: "Maximum pour weight — cast iron and steel" },
-  { value: "112", suffix: "years", label: "Continuous foundry lineage to 1912" },
-  { value: "1", suffix: "shop", label: "Design through inspection, no handoffs" },
+  { value: "2021", label: "Applied Metallurgical founded in Gilmer, Texas" },
+  { value: "25–30%", label: "Projected net profit margin after four years in business" },
+  { value: "8", suffix: "tons/day", label: "Planned Plant 2 casting capacity" },
 ];
 
 const STRENGTHS = [
@@ -57,16 +58,16 @@ const DISCIPLINES = [
 
 const RECENT = [
   {
-    label: "Digital scheduling",
-    body: "Production scheduling system for visibility and coordination across casting, machining, and inspection.",
+    label: "Plant 2 planning",
+    body: "Future facility planning targets capacity up to 8 tons of castings per day.",
   },
   {
-    label: "Additive pattern development",
-    body: "Expanded 3D-printed pattern capability for complex geometry and rapid prototyping.",
+    label: "Machining automation",
+    body: "Planned additional Mazak 8800 machining centers with 36-pallet automation systems.",
   },
   {
-    label: "Material tracking",
-    body: "Improved material tracking and departmental coordination across the floor.",
+    label: "Inspection clean room",
+    body: "2026 clean-room construction supports temperature and humidity controlled CMM inspection to .0001\" on machined surfaces.",
   },
 ];
 
@@ -83,13 +84,13 @@ export default function AboutPage() {
               className="mt-6 font-sans font-black leading-[0.95] tracking-[-0.03em] text-ink"
               style={{ fontSize: "clamp(2.5rem, 7vw, 120px)" }}
             >
-              Four generations of cast iron and steel.
+              Built in Gilmer for completed components.
             </h1>
             <p className="mt-10 max-w-[64ch] text-[19px] leading-relaxed text-ink/85">
-              Applied Metallurgical Corp. is a cast iron and steel foundry with
-              an in-house CNC machining cell in Gilmer, Texas — owned and
-              operated by the Hartman family. Metalcasting lineage traces back
-              to Universal Electric Foundry, founded in Chicago in 1912.
+              Applied Metallurgical Corp. was founded in 2021 in Gilmer, Texas.
+              The company was built around Bret Hartman&rsquo;s V-process development
+              work and a vertically integrated model: foundry, machining, and
+              inspection under one roof.
             </p>
           </div>
         </div>
@@ -196,15 +197,36 @@ export default function AboutPage() {
               Bret Hartman
             </h2>
             <div className="mt-3 font-mono text-[11px] tracking-[0.28em] uppercase text-graphite">
-              President
+              Founder / CEO
             </div>
           </div>
           <div className="col-span-12 lg:col-span-8">
             <p className="max-w-[60ch] text-[17px] leading-relaxed text-ink/85">
-              Hartman family ownership runs the shop floor through the
-              engineering office. Decisions on metallurgy, scheduling, and
-              customer commitments stay in-house.
+              Bret Hartman leads the company&rsquo;s V-process development and
+              vertically integrated production model. Joshua Hartman serves as
+              VP of Business Development, connecting customer requirements to
+              the shop&rsquo;s casting, machining, and inspection capabilities.
             </p>
+            <figure className="mt-12 max-w-[860px] border border-ink/15 bg-ink p-3 text-paper">
+              <div className="relative aspect-[4/3] overflow-hidden bg-iron-deep">
+                <Image
+                  src="/uploads/website-additions/hartman-leadership-foundry-about.jpg"
+                  alt="Joshua Hartman and Bret Hartman standing on the foundry floor near molten metal."
+                  fill
+                  sizes="(min-width: 1024px) 860px, 100vw"
+                  className="object-cover object-[center_68%]"
+                />
+              </div>
+              <figcaption className="mt-4 flex flex-col gap-2 px-1 pb-1 md:flex-row md:items-center md:justify-between">
+                <span className="font-mono text-[10px] tracking-[0.24em] uppercase text-ember-bright">
+                  Foundry floor leadership
+                </span>
+                <span className="max-w-[52ch] text-[13px] leading-relaxed text-paper/70 md:text-right">
+                  Hartman leadership on the shop floor at Applied Metallurgical
+                  Corp. in Gilmer, Texas.
+                </span>
+              </figcaption>
+            </figure>
           </div>
         </section>
 

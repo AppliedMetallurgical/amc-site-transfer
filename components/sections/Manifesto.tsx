@@ -98,7 +98,7 @@ export function Manifesto() {
           <div data-mf-attr className="mt-12 flex flex-col items-center gap-3">
             <div className="h-px w-10 bg-ember" />
             <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-graphite">
-              Bret Hartman · President
+              Bret Hartman · Founder / CEO
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ export function Manifesto() {
             },
             {
               t: "Spec-locked",
-              b: "±0.001″ machined tolerance. Material certs and dimensional reports with every shipment. The part performs because the process produced it that way.",
+              b: "±0.001″ machined tolerance, with 2026 clean-room CMM inspection supporting .0001″ measurement on machined surfaces. The part performs because the process produced it that way.",
             },
           ].map((p) => (
             <div key={p.t} className="border-t border-ink/15 pt-6">

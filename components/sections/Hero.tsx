@@ -125,8 +125,9 @@ export function Hero() {
             data-h-sub
             className="mt-10 max-w-[58ch] text-[18px] leading-relaxed text-light/85 md:text-[20px]"
           >
-            V-process sand casting and in-house CNC machining. Design review
-            through final inspection under one roof.
+            V-process sand casting and in-house CNC machining. Founded in
+            2021 and built around one-stop production: design review through
+            final inspection under one roof.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -150,7 +151,7 @@ export function Hero() {
 
             <Link
               data-h-cta
-              href="/capabilities"
+              href="#production-applications"
               className="group inline-flex items-center gap-3 border-b border-light/40 pb-1 font-sans text-[14px] font-medium tracking-[0.04em] text-light/90 transition-colors hover:border-ember-bright hover:text-ember-bright"
             >
               What we make
@@ -166,10 +167,10 @@ export function Hero() {
 
         <div className="mt-auto flex flex-wrap items-end justify-between gap-6 border-t border-light/15 pt-8">
           <div data-h-foot className="font-mono text-[11px] tracking-[0.22em] uppercase text-light/60">
-            Founded 1912 · Universal Electric Foundry, Chicago
+            Founded 2021 · Applied Metallurgical, Gilmer
           </div>
           <div data-h-foot className="font-mono text-[11px] tracking-[0.22em] uppercase text-light/60">
-            Pouring today · Gilmer, Texas
+            V-process development began in 2019
           </div>
         </div>
       </div>

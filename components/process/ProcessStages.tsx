@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 type Step = {
-  n: string;
+  mark: string;
   title: string;
   body: string;
   deliverable: string;
@@ -16,39 +16,39 @@ type Step = {
 
 const STEPS: Step[] = [
   {
-    n: "01",
+    mark: "Blueprint",
     title: "DFM review",
     body: "Print arrives. Geometry reviewed in SolidWorks for moldability, solidification behavior, and machining strategy. Issues flagged before any tooling spend. Customer iterates with engineering, not with a quote bot.",
     deliverable: "Manufacturability feedback + tooling approach",
   },
   {
-    n: "02",
+    mark: "Pattern",
     title: "Pattern development",
     body: "Patterns produced in-house. 3D-printed sand tooling for complex geometry and rapid prototype runs. Hard tooling cut when production volumes justify it. Pattern iteration in days, not weeks.",
     deliverable: "Validated pattern, ready for pour",
   },
   {
-    n: "03",
+    mark: "Flow",
     title: "Gating + risering",
     body: "Engineered gating and risering system designed to control metal flow and solidification. Defect modes (inclusions, porosity, shrink) anticipated and engineered out at the process level.",
     deliverable: "Process plan, defect-controlled",
   },
   {
-    n: "04",
+    mark: "Heat",
     title: "Pour",
     body: "Sand casting, V-process where applicable. Melt chemistry and pour parameters tuned per alloy and part. Controlled solidification, no shortcuts on metallurgy.",
     deliverable: "As-cast part, ±0.030”–±0.125”",
   },
   {
-    n: "05",
+    mark: "Cut",
     title: "Machine",
-    body: "Critical features cut on in-house horizontal CNC. Mastercam programming, Fanuc and Mazak controls. Machining strategy planned during DFM so cast geometry supports the finished tolerance.",
+    body: "Critical features cut on in-house horizontal CNC. Mastercam programming, Fanuc and Mazak controls, Mazak 8800 capacity, and dedicated Enshu 4-axis medical-part production. Machining strategy planned during DFM so cast geometry supports the finished tolerance.",
     deliverable: "Machined part, ±0.001”–±0.005”",
   },
   {
-    n: "06",
+    mark: "Proof",
     title: "Inspect + ship",
-    body: "Process and dimensional validation. First-article and in-process inspection coordinated with production scheduling. Material certs and dimensional reports on the part when it ships.",
+    body: "Process and dimensional validation. First-article and in-process inspection coordinated with production scheduling. The 2026 inspection clean room supports temperature and humidity controlled CMM measurement to .0001\" on machined surfaces.",
     deliverable: "Validated component, documented",
   },
 ];
@@ -120,7 +120,7 @@ export function ProcessStages() {
       <aside className="col-span-12 lg:col-span-3 lg:col-start-1">
         <div className="sticky top-32 hidden lg:block">
           <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-graphite">
-            Six stages
+            Shop rhythm
           </div>
           <div className="mt-2 h-px w-16 bg-ink/40" />
 
@@ -140,7 +140,7 @@ export function ProcessStages() {
               const active = i === activeIndex;
               return (
                 <li
-                  key={s.n}
+                  key={s.title}
                   className="relative flex items-center gap-4 pl-0 transition-colors duration-300"
                 >
                   <span
@@ -150,11 +150,7 @@ export function ProcessStages() {
                         ? "border-ember bg-ember text-paper"
                         : "border-rule text-graphite"
                     }`}
-                  >
-                    <span className="font-mono text-[10px] tracking-[0.14em]">
-                      {s.n}
-                    </span>
-                  </span>
+                  />
                   <span
                     className={`font-sans text-[13px] tracking-[0.04em] transition-colors duration-300 ${
                       active ? "text-ink" : "text-graphite"
@@ -172,7 +168,7 @@ export function ProcessStages() {
       <div className="col-span-12 space-y-24 lg:col-span-9 lg:col-start-4">
         {STEPS.map((s, i) => (
           <article
-            key={s.n}
+            key={s.title}
             data-step
             data-idx={i}
             className="border-t border-rule pt-10"
@@ -180,10 +176,9 @@ export function ProcessStages() {
             <div className="grid grid-cols-12 gap-6">
               <div className="col-span-12 lg:col-span-3">
                 <div
-                  className="font-sans font-black leading-[1] tracking-[-0.04em] text-ember"
-                  style={{ fontSize: "clamp(2.75rem, 4.5vw, 72px)" }}
+                  className="font-sans text-[13px] font-black uppercase tracking-[0.18em] text-ember"
                 >
-                  {s.n}
+                  {s.mark}
                 </div>
               </div>
               <div className="col-span-12 lg:col-span-6">
