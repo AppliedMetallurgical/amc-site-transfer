@@ -72,22 +72,22 @@ export function Stats() {
             <div
               key={s.label}
               data-stat-card
-              className="border-t border-light/15 pt-6"
+              className="min-w-0 border-t border-light/15 pt-6 text-center"
             >
-              <div className="flex items-baseline gap-3">
+              <div className="flex min-h-[92px] flex-col items-center justify-start gap-2">
                 <div
-                  className="font-sans font-black leading-[1] tracking-[-0.03em]"
-                  style={{ fontSize: "clamp(2.75rem, 5vw, 76px)" }}
+                  className="whitespace-nowrap font-sans font-black leading-[0.95] tracking-[-0.04em]"
+                  style={{ fontSize: "clamp(2.45rem, 4.1vw, 62px)" }}
                 >
                   {s.value}
                 </div>
                 {s.suffix && (
-                  <div className="font-mono text-[12px] tracking-[0.22em] uppercase text-light/55">
+                  <div className="font-mono text-[12px] leading-none tracking-[0.22em] uppercase text-light/55">
                     {s.suffix}
                   </div>
                 )}
               </div>
-              <div className="mt-5 max-w-[28ch] text-[15px] leading-relaxed text-light/75">
+              <div className="mx-auto mt-5 max-w-[28ch] text-[15px] leading-relaxed text-light/75">
                 {s.label}
               </div>
             </div>
