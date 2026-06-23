@@ -210,7 +210,7 @@ export default function AboutPage() {
             <figure className="mt-12 max-w-[860px] border border-ink/15 bg-ink p-3 text-paper">
               <div className="relative aspect-[4/3] overflow-hidden bg-iron-deep">
                 <Image
-                  src="/uploads/website-additions/hartman-leadership-foundry-about.jpg"
+                  src="/uploads/website-additions/hartman-leadership-foundry-gpt-restored.jpg"
                   alt="Joshua Hartman and Bret Hartman standing on the foundry floor near molten metal."
                   fill
                   sizes="(min-width: 1024px) 860px, 100vw"
