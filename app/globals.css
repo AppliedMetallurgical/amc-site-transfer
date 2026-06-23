@@ -91,4 +91,12 @@ body.drawer-lock {
   color: var(--c-paper);
 }
 
+.font-mono.text-\[11px\].tracking-\[0\.28em\].uppercase.text-ember,
+.font-mono.text-\[11px\].tracking-\[0\.28em\].uppercase.text-ember-bright {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  line-height: 1.45;
+}
+
 
