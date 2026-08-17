@@ -7,30 +7,12 @@ const HISTORY_POINTS = [
   {
     label: "2021",
     title: "Applied Metallurgical opens in Gilmer",
-    body: "Production operations were built from the ground up in Gilmer, Texas, with equipment and machines moved from Commercial Machine / Commercial Castings into the new plant.",
+    body: "Production operations were built from the ground up in Gilmer, Texas, with foundry and machining equipment assembled into the new plant.",
   },
   {
     label: "2021–present",
     title: "Casting and machining under one roof",
     body: "The shop combines foundry and machining capabilities into a one-stop manufacturing operation for customers that need completed components, not disconnected vendor handoffs.",
-  },
-];
-
-const LINEAGE = [
-  {
-    years: "1940–1980",
-    name: "Commercial Castings",
-    body: "Developed by Mel Hartman and associates in Los Angeles, California, focused on mid-size to large castings.",
-  },
-  {
-    years: "1988–2020",
-    name: "Commercial Castings / Commercial Machine",
-    body: "Operations moved to Fontana, California, with separate facilities for foundry production, mold and core construction, painting and staging, machining, and customer pattern storage.",
-  },
-  {
-    years: "2021–present",
-    name: "Applied Metallurgical",
-    body: "Equipment and machines from Commercial Machine / Commercial Castings were transported to Gilmer, Texas, where AMC refined production practices around V-process casting and in-house machining.",
   },
 ];
 
@@ -66,7 +48,7 @@ export function CompanyHistory() {
               className="mt-6 font-sans font-black leading-[1] tracking-[-0.03em] text-ink"
               style={{ fontSize: "clamp(2.25rem, 5vw, 72px)" }}
             >
-              Built in Gilmer from a Hartman foundry lineage.
+              Built in Gilmer around integrated foundry and machining.
             </h2>
           </div>
           <div className="col-span-12 lg:col-span-8">
@@ -88,38 +70,11 @@ export function CompanyHistory() {
               <h3 className="mt-4 font-sans text-[22px] font-bold leading-tight tracking-[-0.015em] text-ink">
                 {point.title}
               </h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-ink/75">{point.body}</p>
+              <p className="mt-4 text-[15px] leading-relaxed text-ink/75">
+                {point.body}
+              </p>
             </article>
           ))}
-        </div>
-
-        <div className="mt-28 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
-          <div className="col-span-12 lg:col-span-4">
-            <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-ember">
-              Lineage
-            </div>
-            <h3
-              className="mt-6 font-sans font-black leading-[1.05] tracking-[-0.025em] text-ink"
-              style={{ fontSize: "clamp(1.75rem, 3.2vw, 42px)" }}
-            >
-              From Commercial Castings to Applied Metallurgical.
-            </h3>
-          </div>
-          <div className="col-span-12 lg:col-span-8">
-            <div className="space-y-6">
-              {LINEAGE.map((item) => (
-                <div key={item.name} className="grid grid-cols-12 gap-6 border-t border-ink/15 pt-6 first:border-t-0 first:pt-0">
-                  <div className="col-span-12 md:col-span-3 font-mono text-[11px] tracking-[0.22em] uppercase text-graphite">
-                    {item.years}
-                  </div>
-                  <div className="col-span-12 md:col-span-9">
-                    <div className="font-sans text-[18px] font-bold text-ink">{item.name}</div>
-                    <p className="mt-2 text-[15px] leading-relaxed text-ink/75">{item.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="mt-28 grid grid-cols-12 gap-8 border-t border-ink/15 pt-12">
@@ -138,7 +93,9 @@ export function CompanyHistory() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {MILESTONES.map((group) => (
                 <article key={group.group} className="border-t border-ink/15 pt-6">
-                  <h4 className="font-sans text-[18px] font-bold text-ink">{group.group}</h4>
+                  <h4 className="font-sans text-[18px] font-bold text-ink">
+                    {group.group}
+                  </h4>
                   <ul className="mt-5 space-y-4">
                     {group.items.map((item) => (
                       <li key={item} className="text-[15px] leading-relaxed text-ink/75">
