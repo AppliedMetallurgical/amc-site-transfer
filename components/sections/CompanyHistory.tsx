@@ -56,7 +56,7 @@ export function CompanyHistory() {
               Applied Metallurgical was founded in 2021 in Gilmer, Texas. Its operating model was shaped several years earlier when Bret Hartman began refining V-process technology around a vertically integrated shop: cast, machine, inspect, and deliver completed components from one facility.
             </p>
             <p className="mt-6 max-w-[66ch] text-[18px] leading-relaxed text-ink/75">
-              That model reduces outside processing, tightens scheduling control, and positions the company for stronger margins than the traditional foundry model. The next planned expansion, Plant 2, is designed for up to 8 tons of castings per day with additional Mazak 8800 machining centers and 36-pallet automation systems.
+              That model reduces outside processing, tightens scheduling control, and positions the company for stronger margins than the traditional foundry model. The next planned expansion, Plant 2, is designed for up to 8 tons of castings per day with additional Mazak 8800 machining centers and 12-pallet automation systems.
             </p>
           </div>
         </div>
