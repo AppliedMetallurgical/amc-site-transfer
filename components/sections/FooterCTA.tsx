@@ -82,12 +82,11 @@ export function FooterCTA() {
               className="mt-8 font-sans font-black leading-[0.95] tracking-[-0.03em]"
               style={{ fontSize: "clamp(3rem, 8vw, 132px)" }}
             >
-              <span className="block">Send us</span>
-              <span className="block">your print.</span>
+              <span className="block">Let’s talk</span>
+              <span className="block">about your part.</span>
             </h2>
             <p className="mt-8 max-w-[56ch] text-[18px] leading-relaxed text-light/80 md:text-[19px]">
-              STEP, IGES, SolidWorks, or PDF. We&rsquo;ll review the geometry,
-              flag the manufacturability issues, and quote it back.
+              Email us about your part, material, and target volume. We&rsquo;ll coordinate how to exchange drawings.
             </p>
           </div>
 
