@@ -144,22 +144,16 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link
-              href="/rfq"
-              aria-current={isActive("/rfq") ? "page" : undefined}
-              className={cn(
-                "group relative hidden items-center gap-2.5 overflow-hidden border px-5 py-2.5 font-sans text-[13px] font-semibold tracking-[0.06em] uppercase transition-colors md:inline-flex",
-                isActive("/rfq")
-                  ? "border-ember-bright bg-ember-bright text-dark"
-                  : "border-light/50 text-light hover:border-ember-bright"
-              )}
+            <a
+              href="mailto:sales@appliedmetallurgical.com?subject=Request%20for%20a%20quote"
+              className="group relative hidden items-center gap-2.5 overflow-hidden border border-light/50 px-5 py-2.5 font-sans text-[13px] font-semibold tracking-[0.06em] uppercase text-light transition-colors hover:border-ember-bright md:inline-flex"
             >
               <span
                 aria-hidden
                 className="absolute inset-0 origin-left scale-x-0 bg-ember-bright transition-transform duration-500 ease-out group-hover:scale-x-100"
               />
               <span className="relative z-10 transition-colors duration-300 group-hover:text-dark">
-                Send a print
+                Email sales
               </span>
               <span
                 aria-hidden
@@ -167,7 +161,7 @@ export function Header() {
               >
                 →
               </span>
-            </Link>
+            </a>
             <ThemeToggle />
             <button
               type="button"
