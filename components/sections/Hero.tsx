@@ -131,23 +131,23 @@ export function Hero() {
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-6">
-            <Link
+            <a
               data-h-cta
-              href="/rfq"
+              href="mailto:sales@appliedmetallurgical.com?subject=Request%20for%20a%20quote"
               className="group relative inline-flex items-center gap-3 overflow-hidden bg-light px-7 py-4 font-sans text-[14px] font-semibold tracking-[0.04em] text-dark transition-colors duration-300 hover:text-light"
             >
               <span
                 aria-hidden
                 className="absolute inset-0 origin-left scale-x-0 bg-ember-bright transition-transform duration-500 ease-out group-hover:scale-x-100"
               />
-              <span className="relative z-10">Send us your print</span>
+              <span className="relative z-10">Email us for a quote</span>
               <span
                 aria-hidden
                 className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
               >
                 →
               </span>
-            </Link>
+            </a>
 
             <Link
               data-h-cta
