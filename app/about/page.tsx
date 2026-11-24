@@ -63,7 +63,7 @@ const RECENT = [
   },
   {
     label: "Machining automation",
-    body: "Planned additional Mazak 8800 machining centers with 12-pallet automation systems.",
+    body: "Planned additional Mazak 8800 machining centers with 36-pallet automation systems.",
   },
   {
     label: "Inspection clean room",
